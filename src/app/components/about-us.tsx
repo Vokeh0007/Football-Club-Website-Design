@@ -1,4 +1,7 @@
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
+import chairmanPhoto from "../../imports/chairman.jpeg";
+import coachPhoto from "../../imports/coach.jpeg";
+import secretaryPhoto from "../../imports/secretary.jpeg";
 import { Trophy, Users, Target, Heart, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -63,15 +66,18 @@ export function AboutUs() {
   const management = [
     {
       name: 'Evans Kimani',
-      position: 'Club Chairman'
+      position: 'Club Chairman',
+      image: chairmanPhoto
     },
     {
       name: 'Gibson Kariuki',
-      position: 'Coach'
+      position: 'Coach',
+      image: coachPhoto
     },
     {
       name: 'Kiragu Ngure',
-      position: 'Club Secretary'
+      position: 'Club Secretary',
+      image: secretaryPhoto
     }
   ];
 
@@ -197,8 +203,12 @@ export function AboutUs() {
             {management.map((member, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
-                  <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-accent text-white flex items-center justify-center text-3xl">
-                    {member.name.split(' ').map((namePart) => namePart[0]).join('')}
+                  <div className="relative mb-4">
+                    <ImageWithFallback
+                      src={member.image}
+                      alt={`${member.name}, ${member.position}`}
+                      className="w-32 h-32 object-cover rounded-full mx-auto"
+                    />
                   </div>
                   <h3 className="text-xl text-primary mb-2">{member.name}</h3>
                   <p className="text-accent mb-2">{member.position}</p>
@@ -252,7 +262,7 @@ export function AboutUs() {
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-accent" />
-                  <span>15,000 capacity stadium with modern amenities</span>
+                  <span>15,000 capacity stadium </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-accent" />

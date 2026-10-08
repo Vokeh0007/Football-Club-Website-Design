@@ -2,125 +2,216 @@ import duoPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.50.jpeg";
 import keeperPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.jpeg";
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
 import trioPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.3.jpeg";
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import coachPhoto from "../../imports/coach.jpeg";
+import brianKimaniPhoto from "../../imports/briankimani.jpeg";
+import dennisMachariaPhoto from "../../imports/dennismacharia.jpeg";
+import dennisNjoguPhoto from "../../imports/dennisnjogu.jpeg";
+import gideonMainaPhoto from "../../imports/gideonmaina.jpeg";
+import ianNgunyiPhoto from "../../imports/ianngunyi.jpeg";
+import jayVickyPhoto from "../../imports/jayvicky.jpeg";
+import peterKagaraPhoto from "../../imports/peterkagara.jpeg";
+import stanleyMugesiPhoto from "../../imports/stanleymugesi.jpeg";
+import thiongoPhoto from "../../imports/thiong'o.jpeg";
+import vudzuAllanPhoto from "../../imports/vudzuallan.jpeg";
+import wanjauPhoto from "../../imports/wanjau.jpeg";
+import warimwePhoto from "../../imports/warimwe.jpeg";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function Teams() {
   const seniorPlayers = [
     {
-      name: 'Marcus Johnson',
-      position: 'Forward',
+      name: "Stanley Mugesi",
+      position: "Forward",
       number: 9,
-      age: 28,
-      image: keeperPhoto
-    },
-    {
-      name: 'Alex Rivera',
-      position: 'Midfielder',
-      number: 10,
-      age: 26,
-      image: keeperPhoto
-    },
-    {
-      name: 'James Mitchell',
-      position: 'Defender',
-      number: 4,
-      age: 30,
-      image: keeperPhoto
-    },
-    {
-      name: 'David Stone',
-      position: 'Goalkeeper',
-      number: 1,
-      age: 32,
-      image: keeperPhoto
-    },
-    {
-      name: 'Carlos Santos',
-      position: 'Midfielder',
-      number: 8,
-      age: 24,
-      image: keeperPhoto
-    },
-    {
-      name: 'Tommy Wilson',
-      position: 'Forward',
-      number: 11,
       age: 22,
-      image: keeperPhoto
-    }
+      image: stanleyMugesiPhoto,
+    },
+    {
+      name: "Ian Ngunyi",
+      position: "Winger",
+      number: 7,
+      age: 23,
+      image: ianNgunyiPhoto,
+    },
+    {
+      name: "Kevin Matu",
+      position: "Forward",
+      number: 19,
+      age: 20,
+      image: keeperPhoto,
+    },
+    {
+      name: "Dennis Njogu",
+      position: "Midfielder",
+      number: 99,
+      age: 23,
+      image: dennisNjoguPhoto,
+    },
+    {
+      name: "Phelix Kimani",
+      position: "Goalkeeper",
+      number: 31,
+      age: 19,
+      image: keeperPhoto,
+    },
+    {
+      name: "Dennis Macharia",
+      position: "Midfielder",
+      number: 10,
+      age: 22,
+      image: dennisMachariaPhoto,
+    },
+    {
+      name: "Gideon Maina",
+      position: "Defender",
+      number: 4,
+      age: 22,
+      image: gideonMainaPhoto,
+    },
+    {
+      name: "Francis Muchai",
+      position: "Defender",
+      number: 15,
+      age: 22,
+      image: keeperPhoto,
+    },
+    {
+      name: "Thiong'o",
+      position: "Defender",
+      number: 5,
+      age: 21,
+      image: thiongoPhoto,
+    },
+    {
+      name: "Wanjau",
+      position: "Full-back",
+      number: 8,
+      age: 22,
+      image: wanjauPhoto,
+    },
+    {
+      name: "Ombati",
+      position: "Midfielder",
+      number: 8,
+      age: 22,
+      image: keeperPhoto,
+    },
+    {
+      name: "Warimwe",
+      position: "Midfielder",
+      number: 8,
+      age: 22,
+      image: warimwePhoto,
+    },
+    {
+      name: "Peter Kagara",
+      position: "Midfielder",
+      number: 6,
+      age: 30,
+      image: peterKagaraPhoto,
+    },
+    {
+      name: "Moha",
+      position: "Left-back",
+      number: 3,
+      age: 25,
+      image: keeperPhoto,
+    },
+    {
+      name: "Vudzu Allan",
+      position: "Goalkeeper",
+      number: 2,
+      age: 25,
+      image: vudzuAllanPhoto,
+    },
+    {
+      name: "Jay Vicky",
+      position: "Defender",
+      number: 5,
+      age: 25,
+      image: jayVickyPhoto,
+    },
+    {
+      name: "Brian Kimani",
+      position: "Forward",
+      number: 8,
+      age: 25,
+      image: brianKimaniPhoto,
+    },
   ];
 
   const womenPlayers = [
     {
-      name: 'Emma Thompson',
-      position: 'Forward',
+      name: "Emma Thompson",
+      position: "Forward",
       number: 9,
       age: 25,
-      image: duoPhoto
+      image: duoPhoto,
     },
     {
-      name: 'Sofia Martinez',
-      position: 'Midfielder',
+      name: "Sofia Martinez",
+      position: "Midfielder",
       number: 10,
       age: 23,
-      image: duoPhoto
+      image: duoPhoto,
     },
     {
-      name: 'Rachel Davis',
-      position: 'Defender',
+      name: "Rachel Davis",
+      position: "Defender",
       number: 5,
       age: 27,
-      image: duoPhoto
+      image: duoPhoto,
     },
     {
-      name: 'Jessica Lee',
-      position: 'Goalkeeper',
+      name: "Jessica Lee",
+      position: "Goalkeeper",
       number: 1,
       age: 29,
-      image: duoPhoto
-    }
+      image: duoPhoto,
+    },
   ];
 
   const youthPlayers = [
     {
-      name: 'Tyler Brooks',
-      position: 'Midfielder',
+      name: "Tyler Brooks",
+      position: "Midfielder",
       number: 7,
       age: 17,
-      image: trioPhoto
+      image: trioPhoto,
     },
     {
-      name: 'Jake Rodriguez',
-      position: 'Forward',
+      name: "Jake Rodriguez",
+      position: "Forward",
       number: 9,
       age: 16,
-      image: trioPhoto
+      image: trioPhoto,
     },
     {
-      name: 'Liam Carter',
-      position: 'Defender',
+      name: "Liam Carter",
+      position: "Defender",
       number: 4,
       age: 17,
-      image: trioPhoto
+      image: trioPhoto,
     },
     {
-      name: 'Noah Kim',
-      position: 'Goalkeeper',
+      name: "Noah Kim",
+      position: "Goalkeeper",
       number: 1,
       age: 16,
-      image: trioPhoto
-    }
+      image: trioPhoto,
+    },
   ];
 
   const coaches = [
     {
-      name: 'Gibson Kariuki',
-      position: 'Coach',
-      team: 'Gacharage FC',
-    }
+      name: "Gibson Kariuki",
+      position: "Coach",
+      team: "Gacharage FC",
+      image: coachPhoto,
+    },
   ];
 
   const PlayerCard = ({ player }: { player: any }) => (
@@ -157,8 +248,8 @@ export function Teams() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl mb-6">Our Teams</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Meet the talented players and dedicated coaches who represent Gacharage FC 
-            across all age groups and divisions.
+            Meet the talented players and dedicated coaches who represent
+            Gacharage FC across all age groups and divisions.
           </p>
         </div>
       </section>
@@ -179,10 +270,11 @@ export function Teams() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl text-primary mb-4">Senior Team</h2>
                 <p className="text-secondary max-w-2xl mx-auto">
-                  Our experienced senior squad competing in the regional league with over 70 years of tradition.
+                  Our experienced senior squad competing in the regional league
+                  with over 70 years of tradition.
                 </p>
               </div>
-              
+
               <div className="mb-8">
                 <ImageWithFallback
                   src={teamPhoto}
@@ -203,10 +295,11 @@ export function Teams() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl text-primary mb-4">Women's Team</h2>
                 <p className="text-secondary max-w-2xl mx-auto">
-                  Our dynamic women's team, established in 2010, competing at the highest level with passion and skill.
+                  Our dynamic women's team, established in 2010, competing at
+                  the highest level with passion and skill.
                 </p>
               </div>
-              
+
               <div className="mb-8">
                 <ImageWithFallback
                   src={duoPhoto}
@@ -227,10 +320,11 @@ export function Teams() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl text-primary mb-4">Youth Academy</h2>
                 <p className="text-secondary max-w-2xl mx-auto">
-                  Our youth development program nurturing the next generation of football talent from ages 6-18.
+                  Our youth development program nurturing the next generation of
+                  football talent from ages 6-18.
                 </p>
               </div>
-              
+
               <div className="mb-8">
                 <ImageWithFallback
                   src={trioPhoto}
@@ -246,7 +340,9 @@ export function Teams() {
               </div>
 
               <div className="bg-white rounded-lg p-8">
-                <h3 className="text-2xl text-primary mb-6 text-center">Youth Age Groups</h3>
+                <h3 className="text-2xl text-primary mb-6 text-center">
+                  Youth Age Groups
+                </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div className="text-center">
                     <div className="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
@@ -293,31 +389,54 @@ export function Teams() {
                 {coaches.map((coach, index) => (
                   <Card key={index} className="text-center">
                     <CardContent className="pt-6">
-                      <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-accent text-white flex items-center justify-center text-3xl">
-                        {coach.name.split(' ').map((namePart) => namePart[0]).join('')}
+                      <div className="relative mb-4">
+                        <ImageWithFallback
+                          src={coach.image}
+                          alt={`${coach.name}, ${coach.position}`}
+                          className="w-32 h-32 object-cover rounded-full mx-auto"
+                        />
                       </div>
-                      <h3 className="text-xl text-primary mb-2">{coach.name}</h3>
+                      <h3 className="text-xl text-primary mb-2">
+                        {coach.name}
+                      </h3>
                       <p className="text-accent mb-2">{coach.position}</p>
-                      <Badge variant="outline" className="mb-2">{coach.team}</Badge>
+                      <Badge variant="outline" className="mb-2">
+                        {coach.team}
+                      </Badge>
                     </CardContent>
                   </Card>
                 ))}
               </div>
 
               <div className="mt-12 bg-white rounded-lg p-8">
-                <h3 className="text-2xl text-primary mb-6 text-center">Coaching Philosophy</h3>
+                <h3 className="text-2xl text-primary mb-6 text-center">
+                  Coaching Philosophy
+                </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <h4 className="text-lg text-primary mb-3">Player Development</h4>
-                    <p className="text-secondary">Focus on individual skill development and tactical understanding</p>
+                    <h4 className="text-lg text-primary mb-3">
+                      Player Development
+                    </h4>
+                    <p className="text-secondary">
+                      Focus on individual skill development and tactical
+                      understanding
+                    </p>
                   </div>
                   <div className="text-center">
                     <h4 className="text-lg text-primary mb-3">Team Unity</h4>
-                    <p className="text-secondary">Building strong team chemistry and communication on and off the field</p>
+                    <p className="text-secondary">
+                      Building strong team chemistry and communication on and
+                      off the field
+                    </p>
                   </div>
                   <div className="text-center">
-                    <h4 className="text-lg text-primary mb-3">Character Building</h4>
-                    <p className="text-secondary">Developing leadership, discipline, and sportsmanship in every player</p>
+                    <h4 className="text-lg text-primary mb-3">
+                      Character Building
+                    </h4>
+                    <p className="text-secondary">
+                      Developing leadership, discipline, and sportsmanship in
+                      every player
+                    </p>
                   </div>
                 </div>
               </div>
