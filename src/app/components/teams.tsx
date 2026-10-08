@@ -117,25 +117,9 @@ export function Teams() {
 
   const coaches = [
     {
-      name: 'Michael Rodriguez',
-      position: 'Head Coach',
-      team: 'Senior Team',
-      experience: '15 years',
-      image: duoPhoto
-    },
-    {
-      name: 'David Chen',
-      position: 'Youth Academy Director',
-      team: 'Youth Teams',
-      experience: '12 years',
-      image: duoPhoto
-    },
-    {
-      name: 'Lisa Anderson',
-      position: 'Women\'s Team Coach',
-      team: 'Women\'s Team',
-      experience: '8 years',
-      image: trioPhoto
+      name: 'Gibson Kariuki',
+      position: 'Coach',
+      team: 'Gacharage FC',
     }
   ];
 
@@ -301,7 +285,7 @@ export function Teams() {
               <div className="text-center mb-8">
                 <h2 className="text-3xl text-primary mb-4">Coaching Staff</h2>
                 <p className="text-secondary max-w-2xl mx-auto">
-                  Meet our experienced coaching team dedicated to developing players and achieving excellence.
+                  Meet our coach, Gibson Kariuki.
                 </p>
               </div>
 
@@ -309,17 +293,12 @@ export function Teams() {
                 {coaches.map((coach, index) => (
                   <Card key={index} className="text-center">
                     <CardContent className="pt-6">
-                      <div className="relative mb-4">
-                        <ImageWithFallback
-                          src={coach.image}
-                          alt={coach.name}
-                          className="w-32 h-32 object-cover rounded-full mx-auto"
-                        />
+                      <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-accent text-white flex items-center justify-center text-3xl">
+                        {coach.name.split(' ').map((namePart) => namePart[0]).join('')}
                       </div>
                       <h3 className="text-xl text-primary mb-2">{coach.name}</h3>
                       <p className="text-accent mb-2">{coach.position}</p>
                       <Badge variant="outline" className="mb-2">{coach.team}</Badge>
-                      <p className="text-sm text-secondary">{coach.experience} experience</p>
                     </CardContent>
                   </Card>
                 ))}

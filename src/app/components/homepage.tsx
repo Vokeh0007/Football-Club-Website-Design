@@ -1,6 +1,5 @@
 import duoPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.50.jpeg";
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
-import trioPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.3.jpeg";
 import { useState, useEffect } from "react";
 import { Calendar, Trophy, Users, Clock, ArrowRight, Star } from "lucide-react";
 import { Button } from "./ui/button";
@@ -56,7 +55,7 @@ export function Homepage({ onPageChange }: HomepageProps) {
       excerpt:
         "Gacharage FC defeated Gatumbi FC in our last match to secure promotion to the county league.",
       date: "2026-10-08",
-      image: trioPhoto,
+      image: duoPhoto,
     },
     {
       id: 2,
@@ -96,8 +95,8 @@ export function Homepage({ onPageChange }: HomepageProps) {
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Since 1984, Gacharage FC has been building champions both on and off
-            the field. Join our legacy of excellence, teamwork, and community
-            spirit.
+            the field in Gacharage, Kinyona, Kigumo, Murang'a County. Join our
+            legacy of excellence, teamwork, and community spirit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -106,7 +105,7 @@ export function Homepage({ onPageChange }: HomepageProps) {
               className="bg-accent hover:bg-accent/90 text-white px-8 py-3"
             >
               <a
-                href="https://wa.me/254768023955?text=Hi%2C%20I%27m%20interested%20in%20joining%20Gacharage%20FC."
+                href="https://wa.me/254707124292?text=Hi%2C%20I%27m%20interested%20in%20joining%20Gacharage%20FC."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -120,7 +119,7 @@ export function Homepage({ onPageChange }: HomepageProps) {
               className="border-white bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3"
             >
               <a
-                href="https://wa.me/254768023955?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
+                href="https://wa.me/254707124292?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -159,21 +158,29 @@ export function Homepage({ onPageChange }: HomepageProps) {
               <p className="opacity-90">Away • Kangari Complex Stadium</p>
             </div>
 
-            <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
-              <div className="bg-accent rounded-lg p-4">
-                <div className="text-2xl">{timeToMatch.days}</div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto">
+              <div className="bg-accent rounded-lg p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl tabular-nums">
+                  {timeToMatch.days}
+                </div>
                 <div className="text-sm">Days</div>
               </div>
-              <div className="bg-accent rounded-lg p-4">
-                <div className="text-2xl">{timeToMatch.hours}</div>
+              <div className="bg-accent rounded-lg p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl tabular-nums">
+                  {timeToMatch.hours}
+                </div>
                 <div className="text-sm">Hours</div>
               </div>
-              <div className="bg-accent rounded-lg p-4">
-                <div className="text-2xl">{timeToMatch.minutes}</div>
+              <div className="bg-accent rounded-lg p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl tabular-nums">
+                  {timeToMatch.minutes}
+                </div>
                 <div className="text-sm">Minutes</div>
               </div>
-              <div className="bg-accent rounded-lg p-4">
-                <div className="text-2xl">{timeToMatch.seconds}</div>
+              <div className="bg-accent rounded-lg p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl tabular-nums">
+                  {timeToMatch.seconds}
+                </div>
                 <div className="text-sm">Seconds</div>
               </div>
             </div>
@@ -185,7 +192,7 @@ export function Homepage({ onPageChange }: HomepageProps) {
             className="bg-accent hover:bg-accent/90 text-white"
           >
             <a
-              href="https://wa.me/254768023955?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
+              href="https://wa.me/254707124292?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
               target="_blank"
               rel="noopener noreferrer"
             >

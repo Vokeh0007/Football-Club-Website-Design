@@ -2,8 +2,17 @@ import duoPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.50.jpeg";
 import keeperPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.jpeg";
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
 import trioPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.3.jpeg";
+import additionalPhoto1 from "../../imports/WhatsApp Image 2026-10-08 at 10.49.jpeg";
+import additionalPhoto2 from "../../imports/WhatsApp Image 2026-10-08 at 14.32..jpeg";
+import additionalPhoto3 from "../../imports/WhatsApp Image 2026-10-08 at 14.32.4.jpeg";
+import additionalPhoto4 from "../../imports/WhatsApp Image 2026-10-08 at 14.32.45.jpeg";
+import addepaPhoto from "../../imports/addepa.jpeg";
+import groupPhoto from "../../imports/group.jpeg";
+import jheePhoto from "../../imports/jhee.jpeg";
+import njoguPhoto from "../../imports/njogu.jpeg";
 import { useState } from 'react';
 import { Calendar, Clock, User, Search, Play, Image as ImageIcon, Video } from 'lucide-react';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -104,42 +113,18 @@ export function NewsMedia() {
   ];
 
   const photoGallery = [
-    {
-      id: 1,
-      title: 'Championship Celebration',
-      date: '2024-10-05',
-      image: trioPhoto
-    },
-    {
-      id: 2,
-      title: 'Stadium Atmosphere',
-      date: '2024-10-05',
-      image: teamPhoto
-    },
-    {
-      id: 3,
-      title: 'Youth Training',
-      date: '2024-10-03',
-      image: trioPhoto
-    },
-    {
-      id: 4,
-      title: 'Team Photo 2024',
-      date: '2024-09-15',
-      image: teamPhoto
-    },
-    {
-      id: 5,
-      title: 'New Facility Opening',
-      date: '2024-09-01',
-      image: teamPhoto
-    },
-    {
-      id: 6,
-      title: 'Women\'s Team Victory',
-      date: '2024-09-25',
-      image: duoPhoto
-    }
+    { id: 1, title: 'Gacharage FC gallery photo', image: trioPhoto },
+    { id: 2, title: 'Gacharage FC gallery photo', image: teamPhoto },
+    { id: 3, title: 'Gacharage FC gallery photo', image: duoPhoto },
+    { id: 4, title: 'Gacharage FC gallery photo', image: keeperPhoto },
+    { id: 5, title: 'Gacharage FC gallery photo', image: additionalPhoto1 },
+    { id: 6, title: 'Gacharage FC gallery photo', image: additionalPhoto2 },
+    { id: 7, title: 'Gacharage FC gallery photo', image: additionalPhoto3 },
+    { id: 8, title: 'Gacharage FC gallery photo', image: additionalPhoto4 },
+    { id: 9, title: 'Gacharage FC gallery photo', image: addepaPhoto },
+    { id: 10, title: 'Gacharage FC gallery photo', image: groupPhoto },
+    { id: 11, title: 'Gacharage FC gallery photo', image: jheePhoto },
+    { id: 12, title: 'Gacharage FC gallery photo', image: njoguPhoto }
   ];
 
   const filteredNews = newsArticles.filter(article =>
@@ -333,32 +318,25 @@ export function NewsMedia() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {photoGallery.map((photo) => (
-                  <Card key={photo.id} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group">
-                    <div className="relative">
-                      <ImageWithFallback
-                        src={photo.image}
-                        alt={photo.title}
-                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="absolute bottom-4 left-4 text-white">
-                          <h3 className="text-lg mb-1">{photo.title}</h3>
-                          <div className="flex items-center gap-1 text-sm">
-                            <Calendar className="h-3 w-3" />
-                            {new Date(photo.date).toLocaleDateString()}
-                          </div>
-                        </div>
+              <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 900: 3 }}>
+                <Masonry gutter="1.5rem">
+                  {photoGallery.map((photo) => (
+                    <Card key={photo.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                      <div className="relative overflow-hidden">
+                        <ImageWithFallback
+                          src={photo.image}
+                          alt={photo.title}
+                          className="block w-full h-auto group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <Badge className="absolute top-4 right-4 bg-black/70 text-white">
+                          <ImageIcon className="h-3 w-3 mr-1" />
+                          Photo
+                        </Badge>
                       </div>
-                      <Badge className="absolute top-4 right-4 bg-black/70 text-white">
-                        <ImageIcon className="h-3 w-3 mr-1" />
-                        Photo
-                      </Badge>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+                    </Card>
+                  ))}
+                </Masonry>
+              </ResponsiveMasonry>
             </TabsContent>
           </Tabs>
         </div>

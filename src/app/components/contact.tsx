@@ -27,13 +27,13 @@ export function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+254 700 1234567', '+254 700 1234568'],
+      details: ['+254 707 124292'],
       color: 'text-green-500'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@gacharagefc.com', 'membership@gacharagefc.com'],
+      details: ['gacharagesportsclub@gmail.com'],
       color: 'text-accent'
     },
     {
@@ -55,30 +55,9 @@ export function Contact() {
   ];
 
   const teamContacts = [
-    {
-      name: 'Sarah Thompson',
-      position: 'Club President',
-      email: 'president@gacharagefc.com',
-      phone: '+254 700 1234567'
-    },
-    {
-      name: 'Michael Rodriguez',
-      position: 'Head Coach',
-      email: 'coach@gacharagefc.com',
-      phone: '+254 700 1234568'
-    },
-    {
-      name: 'David Chen',
-      position: 'Youth Academy Director',
-      email: 'youth@gacharagefc.com',
-      phone: '+254 700 1234569'
-    },
-    {
-      name: 'Lisa Anderson',
-      position: 'Membership Coordinator',
-      email: 'membership@gacharagefc.com',
-      phone: '+254 700 1234570'
-    }
+    { name: 'Evans Kimani', position: 'Club Chairman' },
+    { name: 'Gibson Kariuki', position: 'Coach' },
+    { name: 'Kiragu Ngure', position: 'Club Secretary' }
   ];
 
   const socialMedia = [
@@ -133,7 +112,13 @@ export function Contact() {
                 </CardHeader>
                 <CardContent>
                   {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-secondary">{detail}</p>
+                    <p key={idx} className="text-secondary break-words">
+                      {info.title === 'Phone' ? (
+                        <a href="tel:+254707124292">{detail}</a>
+                      ) : info.title === 'Email' ? (
+                        <a href="mailto:gacharagesportsclub@gmail.com">{detail}</a>
+                      ) : detail}
+                    </p>
                   ))}
                 </CardContent>
               </Card>
@@ -266,11 +251,11 @@ export function Contact() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Phone className="h-4 w-4 text-accent" />
-                      <span>Emergency: +254 700 9111234</span>
+                      <a href="tel:+254707124292">Emergency: +254 707 124292</a>
                     </div>
                     <div className="flex items-center gap-2">
                       <Mail className="h-4 w-4 text-accent" />
-                      <span>emergency@gacharagefc.com</span>
+                      <a className="break-all" href="mailto:gacharagesportsclub@gmail.com">gacharagesportsclub@gmail.com</a>
                     </div>
                   </div>
                 </CardContent>
@@ -290,7 +275,7 @@ export function Contact() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamContacts.map((contact, index) => (
               <Card key={index}>
                 <CardContent className="pt-6 text-center">
@@ -298,12 +283,12 @@ export function Contact() {
                   <p className="text-accent mb-4">{contact.position}</p>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center justify-center gap-2">
-                      <Mail className="h-3 w-3 text-secondary" />
-                      <span className="text-secondary">{contact.email}</span>
+                      <Phone className="h-3 w-3 text-secondary" />
+                      <a className="text-secondary" href="tel:+254707124292">+254 707 124292</a>
                     </div>
                     <div className="flex items-center justify-center gap-2">
-                      <Phone className="h-3 w-3 text-secondary" />
-                      <span className="text-secondary">{contact.phone}</span>
+                      <Mail className="h-3 w-3 text-secondary" />
+                      <a className="text-secondary break-all" href="mailto:gacharagesportsclub@gmail.com">gacharagesportsclub@gmail.com</a>
                     </div>
                   </div>
                 </CardContent>

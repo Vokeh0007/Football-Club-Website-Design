@@ -27,7 +27,7 @@ export function Membership() {
     {
       id: 'youth',
       name: 'Youth Membership',
-      price: '$25',
+      price: 'KSh 1,000',
       period: '/month',
       description: 'Perfect for young players aged 6-18',
       features: [
@@ -44,7 +44,7 @@ export function Membership() {
     {
       id: 'adult',
       name: 'Adult Membership',
-      price: '$45',
+      price: 'KSh 1,500',
       period: '/month',
       description: 'For adult players and recreational football',
       features: [
@@ -61,7 +61,7 @@ export function Membership() {
     {
       id: 'supporter',
       name: 'Supporter Membership',
-      price: '$15',
+      price: 'KSh 500',
       period: '/month',
       description: 'Support the club without playing',
       features: [
@@ -78,7 +78,7 @@ export function Membership() {
     {
       id: 'family',
       name: 'Family Package',
-      price: '$80',
+      price: 'KSh 2,000',
       period: '/month',
       description: 'Special rates for families',
       features: [
@@ -183,7 +183,7 @@ export function Membership() {
     ].join('\n');
 
     window.open(
-      `https://wa.me/254768023955?text=${encodeURIComponent(applicationDetails)}`,
+      `https://wa.me/254707124292?text=${encodeURIComponent(applicationDetails)}`,
       '_blank',
       'noopener,noreferrer'
     );
@@ -474,12 +474,12 @@ export function Membership() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <h3 className="text-lg text-primary mb-2">Call Us</h3>
-              <p className="text-accent mb-1">+254 700 1234567</p>
+              <a href="tel:+254707124292" className="text-accent mb-1">+254 707 124292</a>
               <p className="text-sm text-secondary">Mon-Fri 9AM-6PM</p>
             </div>
             <div>
               <h3 className="text-lg text-primary mb-2">Email Us</h3>
-              <p className="text-accent mb-1">membership@gacharagefc.com</p>
+              <a href="mailto:gacharagesportsclub@gmail.com" className="text-accent mb-1 break-all">gacharagesportsclub@gmail.com</a>
               <p className="text-sm text-secondary">We reply within 24 hours</p>
             </div>
             <div>

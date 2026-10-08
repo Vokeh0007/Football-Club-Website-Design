@@ -65,11 +65,11 @@ export function Footer({ onPageChange }: FooterProps) {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-accent" />
-                <span>+254 700 1234567</span>
+                <a href="tel:+254707124292" className="hover:text-accent">+254 707 124292</a>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-accent" />
-                <span>info@gacharagefc.com</span>
+                <a href="mailto:gacharagesportsclub@gmail.com" className="break-all hover:text-accent">gacharagesportsclub@gmail.com</a>
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ export function Footer({ onPageChange }: FooterProps) {
               We are actively looking for sponsors to support Gacharage FC.
             </p>
             <a
-              href="https://wa.me/254768023955?text=Hi%2C%20I%27m%20interested%20in%20sponsoring%20Gacharage%20FC."
+              href="https://wa.me/254707124292?text=Hi%2C%20I%27m%20interested%20in%20sponsoring%20Gacharage%20FC."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4 text-sm text-accent hover:underline"

@@ -1,6 +1,4 @@
-import duoPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.50.jpeg";
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
-import trioPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.3.jpeg";
 import { Trophy, Users, Target, Heart, MapPin, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -64,22 +62,16 @@ export function AboutUs() {
 
   const management = [
     {
-      name: 'Michael Rodriguez',
-      position: 'Head Coach',
-      experience: '15 years coaching experience',
-      image: duoPhoto
+      name: 'Evans Kimani',
+      position: 'Club Chairman'
     },
     {
-      name: 'Sarah Thompson',
-      position: 'Club President',
-      experience: 'Former professional player',
-      image: trioPhoto
+      name: 'Gibson Kariuki',
+      position: 'Coach'
     },
     {
-      name: 'David Chen',
-      position: 'Youth Academy Director',
-      experience: 'UEFA Licensed Coach',
-      image: duoPhoto
+      name: 'Kiragu Ngure',
+      position: 'Club Secretary'
     }
   ];
 
@@ -104,7 +96,7 @@ export function AboutUs() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl mb-6">About Gacharage FC</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Over seven decades of excellence, community, and championship football. 
+            42 years of football, community, and club tradition.
             Discover the story behind our legacy and the people who make it possible.
           </p>
         </div>
@@ -197,7 +189,7 @@ export function AboutUs() {
           <div className="text-center mb-12">
             <h2 className="text-3xl text-primary mb-4">Leadership Team</h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Meet the experienced professionals who guide our club to success
+              Meet the people leading Gacharage FC
             </p>
           </div>
 
@@ -205,16 +197,11 @@ export function AboutUs() {
             {management.map((member, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
-                  <div className="relative mb-4">
-                    <ImageWithFallback
-                      src={member.image}
-                      alt={member.name}
-                      className="w-32 h-32 object-cover rounded-full mx-auto"
-                    />
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 bg-accent text-white flex items-center justify-center text-3xl">
+                    {member.name.split(' ').map((namePart) => namePart[0]).join('')}
                   </div>
                   <h3 className="text-xl text-primary mb-2">{member.name}</h3>
                   <p className="text-accent mb-2">{member.position}</p>
-                  <p className="text-sm text-secondary">{member.experience}</p>
                 </CardContent>
               </Card>
             ))}
