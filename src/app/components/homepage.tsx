@@ -12,47 +12,47 @@ interface HomepageProps {
   onPageChange: (page: string) => void;
 }
 
-export function Homepage({ onPageChange }: HomepageProps) {
-  const [timeToMatch, setTimeToMatch] = useState({
-    days: 5,
-    hours: 14,
-    minutes: 23,
-    seconds: 45
-  });
+const NEXT_MATCH_DATE = new Date('2026-10-11T15:00:00');
 
-  // Mock countdown timer
+const getTimeRemaining = (targetDate: Date) => {
+  const difference = targetDate.getTime() - Date.now();
+
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+  };
+};
+
+export function Homepage({ onPageChange }: HomepageProps) {
+  const [timeToMatch, setTimeToMatch] = useState(() => getTimeRemaining(NEXT_MATCH_DATE));
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeToMatch(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
+      setTimeToMatch(getTimeRemaining(NEXT_MATCH_DATE));
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
   const stats = [
-    { icon: Calendar, label: 'Years Established', value: '72' },
+    { icon: Calendar, label: 'Years Established', value: '42' },
     { icon: Users, label: 'Active Members', value: '450+' },
     { icon: Trophy, label: 'Championships', value: '15' },
-    { icon: Star, label: 'Youth Teams', value: '8' },
+    { icon: Star, label: 'Youth Teams', value: '3' },
   ];
 
   const newsItems = [
     {
       id: 1,
-      title: 'Gacharage FC Advances to Regional Finals',
-      excerpt: 'Our senior team secured a thrilling 3-2 victory against City United in the semi-finals...',
-      date: '2024-10-05',
+      title: 'Gacharage FC Promoted to the County League',
+      excerpt: 'Gacharage FC defeated Gatumbi FC in our last match to secure promotion to the county league.',
+      date: '2026-10-08',
       image: trioPhoto
     },
     {
@@ -96,21 +96,32 @@ export function Homepage({ onPageChange }: HomepageProps) {
             Join our legacy of excellence, teamwork, and community spirit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
+              asChild
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-white px-8 py-3"
-              onClick={() => onPageChange('membership')}
             >
-              Join Our Club
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a
+                href="https://wa.me/254768023955?text=Hi%2C%20I%27m%20interested%20in%20joining%20Gacharage%20FC."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Our Club
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
-            <Button 
+            <Button
+              asChild
               size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-primary px-8 py-3"
-              onClick={() => onPageChange('fixtures')}
+              className="border-white bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3"
             >
-              Match Tickets
+              <a
+                href="https://wa.me/254768023955?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Match Tickets/Fare
+              </a>
             </Button>
           </div>
         </div>
@@ -139,9 +150,9 @@ export function Homepage({ onPageChange }: HomepageProps) {
           <h2 className="text-3xl md:text-4xl mb-4">Next Match</h2>
           <div className="bg-white/10 rounded-lg p-8 mb-8">
             <div className="mb-6">
-              <h3 className="text-xl mb-2">Gacharage FC vs River City United</h3>
-              <p className="opacity-90">Saturday, October 12, 2024 • 3:00 PM</p>
-              <p className="opacity-90">Gacharage Grounds</p>
+              <h3 className="text-xl mb-2">Mission FC vs Gacharage FC</h3>
+              <p className="opacity-90">Sunday, October 11, 2026 • 3:00 PM</p>
+              <p className="opacity-90">Away • Mission FC Stadium</p>
             </div>
             
             <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
@@ -164,12 +175,18 @@ export function Homepage({ onPageChange }: HomepageProps) {
             </div>
           </div>
           
-          <Button 
+          <Button
+            asChild
             size="lg" 
             className="bg-accent hover:bg-accent/90 text-white"
-            onClick={() => onPageChange('fixtures')}
           >
-            Get Tickets
+            <a
+              href="https://wa.me/254768023955?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20match%20tickets%20and%20fare."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Tickets
+            </a>
           </Button>
         </div>
       </section>
@@ -226,14 +243,10 @@ export function Homepage({ onPageChange }: HomepageProps) {
       <section className="py-8 bg-white border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
-            <h3 className="text-lg text-secondary">Our Proud Sponsors</h3>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-xl text-secondary">SportsTech Ltd</div>
-            <div className="text-xl text-secondary">City Bank</div>
-            <div className="text-xl text-secondary">Local Motors</div>
-            <div className="text-xl text-secondary">Elite Sports</div>
-            <div className="text-xl text-secondary">Champion Gear</div>
+            <h3 className="text-lg text-secondary">Become a Gacharage FC Sponsor</h3>
+            <p className="text-secondary mt-2">
+              We are actively looking for sponsors to support the club and our players.
+            </p>
           </div>
         </div>
       </section>

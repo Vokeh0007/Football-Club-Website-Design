@@ -15,13 +15,6 @@ export function Footer({ onPageChange }: FooterProps) {
     { id: 'contact', label: 'Contact' },
   ];
 
-  const sponsors = [
-    'SportsTech Ltd',
-    'City Bank',
-    'Local Motors',
-    'Elite Sports',
-  ];
-
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -83,19 +76,18 @@ export function Footer({ onPageChange }: FooterProps) {
 
           {/* Sponsors */}
           <div>
-            <h4 className="mb-4">Our Sponsors</h4>
-            <div className="space-y-2">
-              {sponsors.map((sponsor, index) => (
-                <div key={index} className="text-sm opacity-90">
-                  {sponsor}
-                </div>
-              ))}
-            </div>
-            <div className="mt-4">
-              <button className="text-sm text-accent hover:underline">
-                Become a Sponsor
-              </button>
-            </div>
+            <h4 className="mb-4">Sponsorship</h4>
+            <p className="text-sm opacity-90">
+              We are actively looking for sponsors to support Gacharage FC.
+            </p>
+            <a
+              href="https://wa.me/254768023955?text=Hi%2C%20I%27m%20interested%20in%20sponsoring%20Gacharage%20FC."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 text-sm text-accent hover:underline"
+            >
+              Discuss Sponsorship
+            </a>
           </div>
         </div>
 

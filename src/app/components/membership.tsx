@@ -167,9 +167,26 @@ export function Membership() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
+    const selectedMembership = membershipPlans.find(
+      (plan) => plan.id === formData.membershipType || plan.id === selectedPlan
+    )?.name ?? 'Not specified';
+    const applicationDetails = [
+      'Hi, I would like to apply for Gacharage FC membership.',
+      '',
+      `Name: ${formData.firstName} ${formData.lastName}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone || 'Not provided'}`,
+      `Age: ${formData.age || 'Not provided'}`,
+      `Preferred membership: ${selectedMembership}`,
+      `Football experience: ${formData.experience || 'Not provided'}`,
+      `Additional information: ${formData.message || 'None'}`,
+    ].join('\n');
+
+    window.open(
+      `https://wa.me/254768023955?text=${encodeURIComponent(applicationDetails)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
   return (

@@ -17,11 +17,11 @@ export function NewsMedia() {
   const newsArticles = [
     {
       id: 1,
-      title: 'Gacharage FC Advances to Regional Finals After Thrilling Victory',
-      excerpt: 'In a nail-biting semi-final match, Gacharage FC secured their place in the regional finals with a dramatic 3-2 victory against City United. The match, played in front of a packed Gacharage Grounds, showcased the team\'s resilience and fighting spirit.',
-      content: 'Full article content would go here...',
-      author: 'Sarah Johnson',
-      date: '2024-10-05',
+      title: 'Gacharage FC Promoted to the County League',
+      excerpt: 'Gacharage FC defeated Gatumbi FC in our last match and earned promotion to the county league.',
+      content: 'Gacharage FC earned promotion to the county league after winning our last match against Gatumbi FC.',
+      author: 'Gacharage FC',
+      date: '2026-10-08',
       category: 'Match Report',
       image: trioPhoto,
       featured: true
