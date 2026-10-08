@@ -1,18 +1,18 @@
 import duoPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.50.jpeg";
 import teamPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.53.5.jpeg";
 import trioPhoto from "../../imports/WhatsApp_Image_2026-10-08_at_10.49.3.jpeg";
-import { useState, useEffect } from 'react';
-import { Calendar, Trophy, Users, Clock, ArrowRight, Star } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { useState, useEffect } from "react";
+import { Calendar, Trophy, Users, Clock, ArrowRight, Star } from "lucide-react";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface HomepageProps {
   onPageChange: (page: string) => void;
 }
 
-const NEXT_MATCH_DATE = new Date('2026-10-11T15:00:00');
+const NEXT_MATCH_DATE = new Date("2026-10-11T15:00:00");
 
 const getTimeRemaining = (targetDate: Date) => {
   const difference = targetDate.getTime() - Date.now();
@@ -30,7 +30,9 @@ const getTimeRemaining = (targetDate: Date) => {
 };
 
 export function Homepage({ onPageChange }: HomepageProps) {
-  const [timeToMatch, setTimeToMatch] = useState(() => getTimeRemaining(NEXT_MATCH_DATE));
+  const [timeToMatch, setTimeToMatch] = useState(() =>
+    getTimeRemaining(NEXT_MATCH_DATE),
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,34 +43,37 @@ export function Homepage({ onPageChange }: HomepageProps) {
   }, []);
 
   const stats = [
-    { icon: Calendar, label: 'Years Established', value: '42' },
-    { icon: Users, label: 'Active Members', value: '450+' },
-    { icon: Trophy, label: 'Championships', value: '15' },
-    { icon: Star, label: 'Youth Teams', value: '3' },
+    { icon: Calendar, label: "Years Established", value: "42" },
+    { icon: Users, label: "Active Members", value: "450+" },
+    { icon: Trophy, label: "Championships", value: "15" },
+    { icon: Star, label: "Youth Teams", value: "3" },
   ];
 
   const newsItems = [
     {
       id: 1,
-      title: 'Gacharage FC Promoted to the County League',
-      excerpt: 'Gacharage FC defeated Gatumbi FC in our last match to secure promotion to the county league.',
-      date: '2026-10-08',
-      image: trioPhoto
+      title: "Gacharage FC Promoted to the County League",
+      excerpt:
+        "Gacharage FC defeated Gatumbi FC in our last match to secure promotion to the county league.",
+      date: "2026-10-08",
+      image: trioPhoto,
     },
     {
       id: 2,
-      title: 'New Youth Academy Opens',
-      excerpt: 'We are excited to announce the opening of our state-of-the-art youth training facility...',
-      date: '2024-10-03',
-      image: duoPhoto
+      title: "New Youth Academy Opens",
+      excerpt:
+        "We are excited to announce the opening of our state-of-the-art youth training facility...",
+      date: "2024-10-03",
+      image: duoPhoto,
     },
     {
       id: 3,
-      title: 'Community Outreach Program Launch',
-      excerpt: 'Gacharage FC is proud to launch our new community program aimed at promoting sports in local schools...',
-      date: '2024-10-01',
-      image: teamPhoto
-    }
+      title: "Community Outreach Program Launch",
+      excerpt:
+        "Gacharage FC is proud to launch our new community program aimed at promoting sports in local schools...",
+      date: "2024-10-01",
+      image: teamPhoto,
+    },
   ];
 
   return (
@@ -83,22 +88,21 @@ export function Homepage({ onPageChange }: HomepageProps) {
           />
           <div className="absolute inset-0 bg-primary/70" />
         </div>
-        
+
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl mb-6">
-            GACHARAGE FC
-          </h1>
+          <h1 className="text-5xl md:text-7xl mb-6">GACHARAGE FC</h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90">
             Champions on the Field, Leaders in the Community
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Since 1984, Gacharage FC has been building champions both on and off the field. 
-            Join our legacy of excellence, teamwork, and community spirit.
+            Since 1984, Gacharage FC has been building champions both on and off
+            the field. Join our legacy of excellence, teamwork, and community
+            spirit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              size="lg" 
+              size="lg"
               className="bg-accent hover:bg-accent/90 text-white px-8 py-3"
             >
               <a
@@ -112,7 +116,7 @@ export function Homepage({ onPageChange }: HomepageProps) {
             </Button>
             <Button
               asChild
-              size="lg" 
+              size="lg"
               className="border-white bg-white text-black hover:bg-white/90 hover:text-black px-8 py-3"
             >
               <a
@@ -152,9 +156,9 @@ export function Homepage({ onPageChange }: HomepageProps) {
             <div className="mb-6">
               <h3 className="text-xl mb-2">Mission FC vs Gacharage FC</h3>
               <p className="opacity-90">Sunday, October 11, 2026 • 3:00 PM</p>
-              <p className="opacity-90">Away • Mission FC Stadium</p>
+              <p className="opacity-90">Away • Kangari Complex Stadium</p>
             </div>
-            
+
             <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
               <div className="bg-accent rounded-lg p-4">
                 <div className="text-2xl">{timeToMatch.days}</div>
@@ -174,10 +178,10 @@ export function Homepage({ onPageChange }: HomepageProps) {
               </div>
             </div>
           </div>
-          
+
           <Button
             asChild
-            size="lg" 
+            size="lg"
             className="bg-accent hover:bg-accent/90 text-white"
           >
             <a
@@ -195,15 +199,21 @@ export function Homepage({ onPageChange }: HomepageProps) {
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl text-primary mb-4">Latest News</h2>
+            <h2 className="text-3xl md:text-4xl text-primary mb-4">
+              Latest News
+            </h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Stay updated with the latest news, match results, and club announcements
+              Stay updated with the latest news, match results, and club
+              announcements
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {newsItems.map((news) => (
-              <Card key={news.id} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <Card
+                key={news.id}
+                className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              >
                 <div className="relative h-48">
                   <ImageWithFallback
                     src={news.image}
@@ -226,12 +236,12 @@ export function Homepage({ onPageChange }: HomepageProps) {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
-              onClick={() => onPageChange('news')}
+              onClick={() => onPageChange("news")}
             >
               View All News
             </Button>
@@ -243,9 +253,12 @@ export function Homepage({ onPageChange }: HomepageProps) {
       <section className="py-8 bg-white border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
-            <h3 className="text-lg text-secondary">Become a Gacharage FC Sponsor</h3>
+            <h3 className="text-lg text-secondary">
+              Become a Gacharage FC Sponsor
+            </h3>
             <p className="text-secondary mt-2">
-              We are actively looking for sponsors to support the club and our players.
+              We are actively looking for sponsors to support the club and our
+              players.
             </p>
           </div>
         </div>
